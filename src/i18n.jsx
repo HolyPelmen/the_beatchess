@@ -15,5 +15,9 @@ i18n
     interpolation: {
       escapeValue: false,
     },
+    backend: {
+      //                 ⬇️
+      loadPath: "/the_beatchess/locales/{{lng}}/{{ns}}.json",
+    },
   });
 export default i18n;
