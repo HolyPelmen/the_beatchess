@@ -37,6 +37,8 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: npm install
+      - name: I18n dependency
+        run: npm install i18next i18next-browser-languagedetector i18next-xhr-backend react-i18next
       - name: Build
         run: npm run build
       - name: Setup Pages
