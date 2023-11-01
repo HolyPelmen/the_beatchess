@@ -1,0 +1,9 @@
+.footer {
+  &.extended {
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  &__inner {
+    grid-area: 6 / 2 / 9 / 5;
+  }
+}

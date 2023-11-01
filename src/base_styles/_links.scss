@@ -1,0 +1,202 @@
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+
+  text-decoration: none;
+
+  &.underline {
+    text-decoration: underline;
+  }
+
+  //* ----- Types ------------------------------------------
+  &.base {
+    &.light {
+      text-decoration-color: map-get($map: $primary, $key: "light");
+      & .link__label {
+        color: map-get($map: $primary, $key: "light");
+      }
+
+      & .link__icon {
+        stroke: map-get($map: $primary, $key: "light");
+        fill: map-get($map: $primary, $key: "light");
+      }
+
+      &:hover {
+        text-decoration-color: map-get($map: $main, $key: "200");
+        & .link__label {
+          color: map-get($map: $main, $key: "200");
+        }
+
+        & .link__icon {
+          stroke: map-get($map: $main, $key: "200");
+          fill: map-get($map: $main, $key: "200");
+        }
+      }
+
+      &:active {
+        text-decoration-color: map-get($map: $main, $key: "300");
+        & .link__label {
+          color: map-get($map: $main, $key: "300");
+        }
+
+        & .link__icon {
+          stroke: map-get($map: $main, $key: "300");
+          fill: map-get($map: $main, $key: "300");
+        }
+      }
+    }
+
+    &.dark {
+      text-decoration-color: map-get($map: $primary, $key: "dark");
+      & .link__label {
+        color: map-get($map: $primary, $key: "dark");
+      }
+
+      & .link__icon {
+        stroke: map-get($map: $primary, $key: "dark");
+        fill: map-get($map: $primary, $key: "dark");
+      }
+
+      &:hover {
+        text-decoration-color: map-get($map: $main, $key: "0");
+        & .link__label {
+          color: map-get($map: $main, $key: "0");
+        }
+
+        & .link__icon {
+          stroke: map-get($map: $main, $key: "0");
+          fill: map-get($map: $main, $key: "0");
+        }
+      }
+
+      &:active {
+        text-decoration-color: map-get($map: $main, $key: "100");
+        & .link__label {
+          color: map-get($map: $main, $key: "100");
+        }
+
+        & .link__icon {
+          stroke: map-get($map: $main, $key: "100");
+          fill: map-get($map: $main, $key: "100");
+        }
+      }
+    }
+  }
+
+  &.add {
+    &.light {
+      text-decoration-color: map-get($map: $primary, $key: "light");
+      & .link__label {
+        color: map-get($map: $primary, $key: "light");
+      }
+
+      & .link__icon {
+        stroke: map-get($map: $primary, $key: "light");
+        fill: map-get($map: $primary, $key: "light");
+      }
+
+      &:hover {
+        text-decoration-color: map-get($map: $add, $key: "300");
+        & .link__label {
+          color: map-get($map: $add, $key: "300");
+        }
+
+        & .link__icon {
+          stroke: map-get($map: $add, $key: "300");
+          fill: map-get($map: $add, $key: "300");
+        }
+      }
+
+      &:active {
+        text-decoration-color: map-get($map: $add, $key: "400");
+        & .link__label {
+          color: map-get($map: $add, $key: "400");
+        }
+
+        & .link__icon {
+          stroke: map-get($map: $add, $key: "400");
+          fill: map-get($map: $add, $key: "400");
+        }
+      }
+    }
+
+    &.dark {
+      text-decoration-color: map-get($map: $primary, $key: "dark");
+      & .link__label {
+        color: map-get($map: $primary, $key: "dark");
+      }
+
+      & .link__icon {
+        stroke: map-get($map: $primary, $key: "dark");
+        fill: map-get($map: $primary, $key: "dark");
+      }
+
+      &:hover {
+        text-decoration-color: map-get($map: $add, $key: "0");
+        & .link__label {
+          color: map-get($map: $add, $key: "0");
+        }
+
+        & .link__icon {
+          stroke: map-get($map: $add, $key: "0");
+          fill: map-get($map: $add, $key: "0");
+        }
+      }
+
+      &:active {
+        text-decoration-color: map-get($map: $add, $key: "100");
+        & .link__label {
+          color: map-get($map: $add, $key: "100");
+        }
+
+        & .link__icon {
+          stroke: map-get($map: $add, $key: "100");
+          fill: map-get($map: $add, $key: "100");
+        }
+      }
+    }
+  }
+
+  //* ----- Sizes ------------------------------------------
+  &.large {
+    column-gap: to-rem(12px);
+
+    & .link__icon {
+      width: to-rem(24px);
+      height: to-rem(24px);
+    }
+
+    & .link__label {
+      @include heading-3();
+    }
+  }
+
+  &.medium {
+    column-gap: to-rem(10px);
+
+    & .link__icon {
+      width: to-rem(20px);
+      height: to-rem(20px);
+    }
+
+    & .link__label {
+      @include heading-4();
+    }
+  }
+
+  &.small {
+    column-gap: to-rem(8px);
+
+    & .link__icon {
+      width: to-rem(16px);
+      height: to-rem(16px);
+    }
+
+    & .link__label {
+      @include heading-5("regular");
+    }
+  }
+}

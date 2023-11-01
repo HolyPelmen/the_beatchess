@@ -1,0 +1,64 @@
+$font-family: "Comfortaa", sans-serif; //? variable in case if for some reason element does not apply inheritance from html element
+@import "./main/index";
+@import "./hamburger-settings";
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
+@import "./buttons";
+@import "./inputs";
+@import "./links";
+@import "./images";
+@import "./list-items";
+@import "./dropdowns";
+@import "./logo";
+
+* {
+  transition: $transition;
+}
+
+html {
+  font-size: $base-font;
+  font-family: "Comfortaa", sans-serif;
+  height: 100%;
+}
+
+body {
+  margin: unset;
+}
+
+.aside-menu {
+  position: fixed;
+  z-index: 100;
+  bottom: 5vh;
+  height: 10rem;
+  backdrop-filter: blur(5px);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: to-rem(12px) to-rem(12px) to-rem(12px) to-rem(4px);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+
+  & > .button {
+    width: fit-content;
+  }
+}
+
+//TODO: DELETE ON RELEASE
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  @each $style in $styles {
+    &.#{$style} {
+      background-color: map-get($map: $backgrounds, $key: $style);
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.footer {
+  &.extended {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: to-rem(20px);
+  }
+
+  &__inner {
+    grid-area: 6 / 2 / 8 / 5;
+    &_socials {
+      gap: to-rem(24px);
+    }
+  }
+
+  &__big {
+    grid-area: 2 / 2 / 5 / 5;
+    display: flex;
+    flex-direction: column;
+    row-gap: to-rem(48px);
+
+    &_header {
+      @include heading-2;
+      text-align: center;
+      margin: unset;
+    }
+
+    &_images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: to-rem(24px);
+      padding: to-rem(24px);
+    }
+  }
+}

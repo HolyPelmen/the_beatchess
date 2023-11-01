@@ -1,0 +1,47 @@
+.logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  &__large {
+    &_icon {
+      width: to-rem(64px);
+    }
+    &_full {
+      width: to-rem(1024px);
+    }
+  }
+  &__medium {
+    &_icon {
+      width: to-rem(32px);
+    }
+    &_full {
+      width: to-rem(512px);
+    }
+  }
+  &__small {
+    &_icon {
+      width: to-rem(16px);
+    }
+    &_full {
+      width: to-rem(256px);
+    }
+  }
+  &.light {
+    stroke: map-get($map: $main, $key: "100");
+    fill: map-get($map: $main, $key: "100");
+
+    & circle {
+      stroke: map-get($map: $main, $key: "300");
+      fill: map-get($map: $main, $key: "300");
+    }
+  }
+  &.dark {
+    stroke: map-get($map: $main, $key: "200");
+    fill: map-get($map: $main, $key: "200");
+
+    & circle {
+      stroke: map-get($map: $add, $key: "100");
+      fill: map-get($map: $add, $key: "100");
+    }
+  }
+}

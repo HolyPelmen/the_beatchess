@@ -1,0 +1,49 @@
+@mixin heading-1() {
+  $font: 26;
+  font-size: to-rem($font * 1px);
+  letter-spacing: 0;
+  line-height: (32 / $font);
+  font-weight: map-get($map: $font-weight, $key: "semibold");
+}
+
+@mixin heading-2() {
+  $font: 21;
+  font-size: to-rem($font * 1px);
+  letter-spacing: 0;
+  line-height: calc(25 / $font);
+  font-weight: map-get($map: $font-weight, $key: "semibold");
+}
+
+@mixin heading-3() {
+  $font: 18;
+  font-size: to-rem($font * 1px);
+  letter-spacing: 0;
+  line-height: calc(25 / $font);
+  font-weight: map-get($map: $font-weight, $key: "regular");
+}
+
+@mixin heading-4() {
+  $font: 16;
+  font-size: to-rem($font * 1px);
+  letter-spacing: 0;
+  line-height: calc(25 / $font);
+  font-weight: map-get($map: $font-weight, $key: "regular");
+}
+
+@mixin heading-5($weight) {
+  font-size: to-rem(14px);
+  letter-spacing: 0;
+  font-weight: map-get($map: $font-weight, $key: $weight);
+}
+
+@mixin heading-6($weight) {
+  font-size: to-rem(12px);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  font-weight: map-get($map: $font-weight, $key: $weight);
+}
+
+$font-weight: (
+  "regular": 400,
+  "semibold": 600,
+);

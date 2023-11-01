@@ -1,0 +1,40 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @each $style in $styles {
+    &.#{$style} {
+      background-color: map-get($map: $backgrounds, $key: $style);
+      & .footer__big_header {
+        color: map-get($map: $primary, $key: $style);
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    row-gap: to-rem(24px);
+
+    grid-area: 1 / 2 / 2 / 3;
+
+    padding: to-rem(40px) 0;
+
+    @include prefix(box-shadow, (0px -1px 0px 0px map-get($map: $main, $key: "100")));
+
+    &_pages {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: to-rem(24px);
+    }
+
+    &_socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: to-rem(45px);
+    }
+  }
+}

@@ -1,0 +1,40 @@
+$hamburger-padding-x: 11px !default;
+$hamburger-padding-y: 11px !default;
+$hamburger-layer-width: 17px !default;
+$hamburger-layer-height: 1px !default;
+$hamburger-layer-spacing: 4px !default;
+$hamburger-layer-color: map-get(
+  $map: $primary,
+  $key: "light",
+) !default;
+$hamburger-layer-border-radius: 4px !default;
+$hamburger-hover-opacity: 0.7 !default;
+$hamburger-active-layer-color: none !default;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter: false !default;
+$hamburger-hover-filter: opacity(50%) !default;
+$hamburger-active-hover-filter: $hamburger-hover-filter !default;
+
+.hamburger-inner.light,
+.hamburger-inner.light::before,
+.hamburger-inner.light::after {
+  background-color: $hamburger-layer-color;
+}
+
+.hamburger-inner.dark,
+.hamburger-inner.dark::before,
+.hamburger-inner.dark::after {
+  background-color: map-get($map: $primary, $key: "dark");
+}
+
+.hamburger .button__label {
+  @each $style in $styles {
+    &.#{$style} {
+      color: map-get($map: $primary, $key: $style);
+    }
+  }
+}

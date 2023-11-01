@@ -1,0 +1,10 @@
+.header {
+  &__navigation {
+    position: relative;
+    z-index: 0;
+
+    flex-direction: row;
+    column-gap: to-rem(32px);
+    width: auto;
+  }
+}

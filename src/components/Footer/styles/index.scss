@@ -1,0 +1,13 @@
+@import "../../../base_styles/main/index";
+@import "./layout_000";
+
+@media (min-width: 480px) {
+  @import "./layout_480";
+}
+@media (min-width: 641px) {
+  @import "./layout_640";
+}
+
+@media (min-width: 960px) {
+  @import "./layout_960";
+}

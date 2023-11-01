@@ -1,0 +1,247 @@
+.open-graph {
+  position: absolute;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+
+  animation: transparentBG linear 1s;
+  animation-delay: 3.6s;
+
+  @each $style in $styles {
+    &.#{$style} {
+      background-color: map-get($map: $backgrounds, $key: $style);
+    }
+  }
+
+  & > div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  & #c-letter {
+    position: absolute;
+    transform: translate(60%, 0%);
+    animation: rotate-360 linear 2s;
+    transform-origin: 5.22px 5.22px;
+  }
+
+  $letters: t-letter-1, h-letter-1, e-letter-1, b-letter, e-letter-2, a-letter, t-letter-2,
+    h-letter-2, e-letter-3, s-letter-1, s-letter-2;
+
+  @each $letter in $letters {
+    & ##{$letter} {
+      opacity: 1;
+      transform: translate(-42.6%, -119.7px);
+      animation: #{$letter}-entrance linear 3.2s;
+    }
+  }
+
+  & #space {
+    opacity: 1;
+    transform: translate(0, 0);
+    animation: space-entrance linear 3.2s;
+  }
+}
+
+@keyframes transparentBG {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate-360 {
+  0% {
+    transform: translate(50%, 0%) rotate(0deg);
+  }
+  75% {
+    transform: translate(50%, 0%) rotate(360deg);
+  }
+  100% {
+    transform: translate(60%, 0%) rotate(360deg);
+  }
+}
+
+@keyframes t-letter-1-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(17.9%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(17.9%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes h-letter-1-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(10%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(10%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes e-letter-1-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(1.4%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(1.4%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes space-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(39%, 0);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(39%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes b-letter-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(-9.5%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-9.5%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes e-letter-2-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(-18%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-18%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes a-letter-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(-26.2%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-26.2%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes t-letter-2-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(-34.6%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-34.6%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes h-letter-2-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(-51.3%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-51.3%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes e-letter-3-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(-59.5%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-59.5%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes s-letter-1-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(-67.2%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-67.2%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}
+
+@keyframes s-letter-2-entrance {
+  0% {
+    opacity: 0;
+    transform: translate(-74.1%, -119.7px);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-74.1%, -119.7px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-42.6%, -119.7px);
+  }
+}

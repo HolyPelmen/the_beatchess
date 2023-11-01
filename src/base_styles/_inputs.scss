@@ -1,0 +1,148 @@
+.input-base {
+  &__container {
+    position: relative;
+    display: grid;
+    row-gap: to-rem(12px);
+    min-width: to-rem(252px);
+  }
+
+  &__label {
+    @include heading-5("regular");
+  }
+
+  &__field {
+    @include heading-5("regular");
+    padding: to-rem(8px) to-rem(12px);
+    border-radius: 2px;
+    border: unset;
+
+    .input-base__icon.lead ~ & {
+      padding-left: to-rem(40px);
+    }
+
+    .input-base__icon.trail ~ & {
+      padding-right: to-rem(40px);
+    }
+
+    &::placeholder {
+      @include heading-5("regular");
+    }
+  }
+
+  &__icon {
+    width: to-rem(16px);
+    height: to-rem(16px);
+
+    position: absolute;
+    top: to-rem(36px);
+
+    &.lead {
+      left: to-rem(12px);
+    }
+
+    &.trail {
+      right: to-rem(12px);
+    }
+  }
+
+  //* ----- Light styling ----------------------------
+  &__container.light > &__label {
+    color: map-get($map: $primary, $key: "light");
+  }
+
+  &__container.light > &__field {
+    background-color: map-get($map: $neutral_light, $key: "light_gray");
+
+    outline: 1px solid map-get($map: $main, $key: "300");
+    outline-offset: -1px;
+
+    &::placeholder {
+      color: map-get($map: $neutral_light, $key: "gray");
+    }
+
+    &:hover {
+      outline-color: map-get($map: $main, $key: "100");
+    }
+
+    &:focus {
+      outline: 2px solid map-get($map: $main, $key: "100");
+      outline-offset: -2px;
+      box-shadow: none;
+    }
+  }
+
+  &__container.light > &__icon {
+    stroke: map-get($map: $primary, $key: "light");
+    fill: map-get($map: $primary, $key: "light");
+  }
+
+  //* ----- Dark styling -----------------------------
+  &__container.dark > &__label {
+    color: map-get($map: $primary, $key: "dark");
+  }
+
+  &__container.dark > &__field {
+    background-color: map-get($map: $neutral_dark, $key: "dark_gray");
+
+    outline: 1px solid map-get($map: $add, $key: "300");
+    outline-offset: -1px;
+
+    &::placeholder {
+      color: map-get($map: $neutral_dark, $key: "light_gray");
+    }
+
+    &:hover {
+      outline-color: map-get($map: $add, $key: "200");
+    }
+
+    &:focus {
+      outline: 2px solid map-get($map: $add, $key: "200");
+      outline-offset: -2px;
+      box-shadow: none;
+    }
+  }
+
+  &__container.dark > &__icon {
+    stroke: map-get($map: $primary, $key: "dark");
+    fill: map-get($map: $primary, $key: "dark");
+  }
+
+  //* ----- Error styling ----------------------------
+  &__error {
+    &_container {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      column-gap: to-rem(12px);
+
+      padding: to-rem(4px) 0;
+    }
+
+    &_icon {
+      width: to-rem(16px);
+      height: to-rem(16px);
+      stroke: map-get($map: $service_colors, $key: "error");
+      fill: map-get($map: $service_colors, $key: "error");
+    }
+
+    &_desc {
+      @include heading-6("regular");
+      color: map-get($map: $service_colors, $key: "error");
+    }
+  }
+
+  &__container.error > &__field {
+    outline: 1px solid map-get($map: $service_colors, $key: "error");
+    outline-offset: -1px;
+
+    &:hover {
+      outline-color: map-get($map: $service_colors, $key: "error");
+    }
+
+    &:focus {
+      outline: 2px solid map-get($map: $service_colors, $key: "error");
+      outline-offset: -2px;
+      box-shadow: none;
+    }
+  }
+}

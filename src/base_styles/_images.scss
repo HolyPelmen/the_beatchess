@@ -1,0 +1,102 @@
+$border-radius: 4px;
+
+.image {
+  position: relative;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  &__content {
+    transition: $transition;
+    width: 100%;
+    height: 100%;
+  }
+
+  //* ----- Sizes         ----------------------------------------
+  &.large {
+    width: 128px;
+    height: 128px;
+
+    & .image__hover {
+      flex-direction: row;
+    }
+  }
+
+  &.medium {
+    width: 64px;
+    height: 64px;
+
+    & .image__hover {
+      flex-direction: column;
+    }
+  }
+
+  &.small {
+    width: 32px;
+    height: 32px;
+  }
+
+  //* ----- Hover styling ----------------------------------------
+  &:hover {
+    & .image__content {
+      transform: scale(1.1);
+    }
+
+    & .image__hover {
+      opacity: 1;
+    }
+  }
+
+  &__hover {
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    border-radius: $border-radius;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: to-rem(8px) to-rem(4px);
+
+    &.bg {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: map-get($map: $main, $key: "0");
+        opacity: 0.7;
+      }
+    }
+
+    &_block {
+      z-index: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: to-rem(4px);
+    }
+
+    &_icon {
+      width: to-rem(16px);
+      height: to-rem(16px);
+      stroke: map-get($map: $primary, $key: "light");
+      fill: map-get($map: $primary, $key: "light");
+    }
+
+    &_text {
+      @include heading-6("regular");
+      color: map-get($map: $primary, $key: "light");
+    }
+  }
+}

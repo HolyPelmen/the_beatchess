@@ -1,0 +1,82 @@
+.dropdown-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: to-rem(16px);
+
+  flex: 1;
+
+  padding: to-rem(8px);
+
+  cursor: pointer;
+
+  @each $style in $styles {
+    &.#{$style} {
+      background: unset;
+      border: unset;
+      & > .dropdown-selector__label {
+        color: map-get($map: $primary, $key: $style);
+      }
+      & > .dropdown-selector__icon {
+        stroke: map-get($map: $primary, $key: $style);
+        fill: map-get($map: $primary, $key: $style);
+      }
+    }
+  }
+
+  &__label {
+    @include heading-5("semibold");
+    font-family: $font-family;
+  }
+
+  &__icon {
+    width: to-rem(24px);
+    height: to-rem(24px);
+
+    &.open.right {
+      transform: rotate(-90deg);
+    }
+
+    &.open.down {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.dropdown {
+  display: flex;
+  &.down {
+    flex-direction: column;
+    row-gap: to-rem(12px);
+
+    & .dropdown__container {
+      margin: 0 0 0 10%;
+    }
+  }
+
+  &.right {
+    flex-direction: row;
+    column-gap: to-rem(12px);
+    align-items: start;
+
+    & .dropdown__container {
+      margin: unset;
+      flex: 1;
+    }
+  }
+
+  &__container {
+    display: grid;
+    row-gap: to-rem(8px);
+
+    padding: unset;
+
+    &.light {
+      border: 1px solid map-get($map: $main, $key: "0");
+    }
+
+    &.dark {
+      border: 1px solid map-get($map: $main, $key: "300");
+    }
+  }
+}
